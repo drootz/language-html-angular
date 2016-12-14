@@ -1,8 +1,8 @@
 # HTML language support in Atom with Angular 2 syntax support
 
-[![apm](https://img.shields.io/apm/v/language-html-ng2.svg)](https://atom.io/packages/language-html-ng2)
-[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg)](https://github.com/drootz/language-html-ng2/blob/master/LICENSE.md)
-[![Join the chat at https://gitter.im/language-html-ng2/Lobby](https://badges.gitter.im/language-html-ng2/Lobby.svg)](https://gitter.im/language-html-ng2/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[![apm](https://img.shields.io/apm/v/language-html-angular.svg)](https://atom.io/packages/language-html-angular)
+[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg)](https://github.com/drootz/language-html-angular/blob/master/LICENSE.md)
+[![Join the chat at https://gitter.im/language-html-angular/Lobby](https://badges.gitter.im/language-html-angular/Lobby.svg)](https://gitter.im/language-html-angular/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 Adds syntax highlighting and snippets to HTML files.
 
@@ -10,7 +10,7 @@ Adds syntax highlighting and snippets to HTML files.
 
 Fire up a console and type:
 
-        apm install language-html-ng2
+        apm install language-html-angular
 
 Or, inside Atom's settings select Install and then search for this package.
 

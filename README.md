@@ -26,7 +26,7 @@ Ensure to use a theme packages supporting Angular 2 syntax highlighting for this
 
 Here are the scopes used for styling Angular attributes in a syntax theme:
 
-````
+````less
 
   .html {
 
@@ -55,7 +55,6 @@ Here are the scopes used for styling Angular attributes in a syntax theme:
     }
 
   }
-
 
 ````
 

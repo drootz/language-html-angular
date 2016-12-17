@@ -19,6 +19,7 @@ Or, inside Atom's settings select Install and then search for this package.
 Open a file in Atom editor and select the `HTML (ng2)` file syntax option.
 
 Ensure to use a theme packages supporting Angular 2 syntax highlighting for this package:
+- [syntax-theme-boilerplate-syntax](https://atom.io/themes/syntax-theme-boilerplate-syntax)
 - [tomorrow-night-eigthies-ng-syntax](https://atom.io/themes/tomorrow-night-eighties-ng-syntax)
 
 ### Styling Scopes

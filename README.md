@@ -2,7 +2,6 @@
 
 [![apm](https://img.shields.io/apm/v/language-html-angular.svg)](https://atom.io/packages/language-html-angular)
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg)](https://github.com/drootz/language-html-angular/blob/master/LICENSE.md)
-[![Join the chat at https://gitter.im/language-html-angular/Lobby](https://badges.gitter.im/language-html-angular/Lobby.svg)](https://gitter.im/language-html-angular/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 Adds syntax highlighting and snippets to HTML files.
 
@@ -20,7 +19,9 @@ Open a file in Atom editor and select the `HTML (ng2)` file syntax option.
 
 Ensure to use a theme packages supporting Angular 2 syntax highlighting for this package:
 - [syntax-theme-boilerplate-syntax](https://atom.io/themes/syntax-theme-boilerplate-syntax)
-- [tomorrow-night-eigthies-ng-syntax](https://atom.io/themes/tomorrow-night-eighties-ng-syntax)
+- [tomorrow-night-eigthies-ng2-syntax](https://atom.io/themes/tomorrow-night-eighties-ng2-syntax)
+
+![](https://raw.githubusercontent.com/drootz/language-html-angular/master/img/preview-dark.png)
 
 ### Styling Scopes
 

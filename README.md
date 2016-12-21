@@ -18,9 +18,10 @@ Or, inside Atom's settings select Install and then search for this package.
 Open a file in Atom editor and select the `HTML (ng2)` file syntax option.
 
 Ensure to use a theme packages supporting Angular 2 syntax highlighting for this package:
+- [greenish-holidays-ng2-syntax](https://atom.io/themes/greenish-holidays-ng2-syntax)
 - [syntax-theme-boilerplate-syntax](https://atom.io/themes/syntax-theme-boilerplate-syntax)
 - [tomorrow-night-eigthies-ng2-syntax](https://atom.io/themes/tomorrow-night-eighties-ng2-syntax)
-- [greenish-holidays-ng2-syntax](https://atom.io/themes/greenish-holidays-ng2-syntax)
+- [yesterday-night-eighties-ng2-syntax](https://atom.io/themes/yesterday-night-eighties-ng2-syntax)
 
 ![](https://raw.githubusercontent.com/drootz/language-html-angular/master/img/preview-dark.png)
 

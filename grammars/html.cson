@@ -503,62 +503,8 @@
         'include': '#unquoted-attribute'
       }
     ]
-  'tag-ng-attribute-star':
-    'begin': '\\B([\\*\\#]{1}[a-zA-Z0-9.:-]+)\\b\\s*(=)'
-    'captures':
-      '1':
-        'name': 'entity.other.attribute-name.ng.html'
-      '2':
-        'name': 'punctuation.separator.key-value.ng.html'
-    'end': '(?<=\'|")|(?=\\s|>)'
-    'name': 'meta.attribute-with-value.ng.html'
-    'patterns': [
-      {
-        'begin': '"'
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.string.begin.ng.html'
-        'contentName': 'meta.toc-list.ng.html'
-        'end': '"'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.string.end.ng.html'
-        'name': 'string.quoted.double.ng.html'
-        'patterns': [
-          {
-            'include': '#embedded-code'
-          }
-          {
-            'include': '#entities'
-          }
-        ]
-      }
-      {
-        'begin': '\''
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.string.begin.ng.html'
-        'contentName': 'meta.toc-list.ng.html'
-        'end': '\''
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.string.end.ng.html'
-        'name': 'string.quoted.single.ng.html'
-        'patterns': [
-          {
-            'include': '#embedded-code'
-          }
-          {
-            'include': '#entities'
-          }
-        ]
-      }
-      {
-        'include': '#unquoted-attribute'
-      }
-    ]
   'tag-ng-attribute':
-    'begin': '\\B([\\[\\(][a-zA-Z0-9.:-]+[\\]\\)])\\s*(=)'
+    'begin': '((\\B([\\[\\(][a-zA-Z0-9.:-]+[\\]\\)])\\s*(=))|(\\B(((\\[\\()[a-zA-Z0-9.:-]+(\\)\\]))\\B\\s*(=)))|(\\b((bind-|on-|bindon-)[a-zA-Z0-9]+\\b\\s*(=)))|(\\B([\\*\\#]{1}[a-zA-Z0-9.:-]+)\\b\\s*(=)))'
     'captures':
       '1':
         'name': 'entity.other.attribute-name.ng.html'
@@ -611,60 +557,10 @@
         'include': '#unquoted-attribute'
       }
     ]
-  'tag-ng-attribute-bind':
-    'begin': '\\B((\\[\\()[a-zA-Z0-9.:-]+(\\)\\]))\\s*(=)'
-    'captures':
-      '1':
-        'name': 'entity.other.attribute-name.ng.html'
-      '2':
-        'name': 'punctuation.separator.key-value.ng.html'
-    'end': '(?<=\'|")|(?=\\s|>)'
-    'name': 'meta.attribute-with-value.ng.html'
-    'patterns': [
-      {
-        'begin': '"'
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.string.begin.ng.html'
-        'contentName': 'meta.toc-list.ng.html'
-        'end': '"'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.string.end.ng.html'
-        'name': 'string.quoted.double.ng.html'
-        'patterns': [
-          {
-            'include': '#embedded-code'
-          }
-          {
-            'include': '#entities'
-          }
-        ]
-      }
-      {
-        'begin': '\''
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.string.begin.ng.html'
-        'contentName': 'meta.toc-list.ng.html'
-        'end': '\''
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.string.end.ng.html'
-        'name': 'string.quoted.single.ng.html'
-        'patterns': [
-          {
-            'include': '#embedded-code'
-          }
-          {
-            'include': '#entities'
-          }
-        ]
-      }
-      {
-        'include': '#unquoted-attribute'
-      }
-    ]
+
+
+
+
   'tag-stuff':
     'patterns': [
       {
@@ -672,12 +568,6 @@
       }
       {
         'include': '#tag-ng-attribute'
-      }
-      {
-        'include': '#tag-ng-attribute-star'
-      }
-      {
-        'include': '#tag-ng-attribute-bind'
       }
       {
         'include': '#tag-generic-attribute'

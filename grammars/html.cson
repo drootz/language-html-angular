@@ -582,7 +582,7 @@
     'endCaptures':
       '0':
         'name': 'punctuation.definition.interpolation.end.ng.html'
-    'name': 'string.interpolation.html'
+    'name': 'string.interpolation.ng.html'
   'tag-stuff':
     'patterns': [
       {

@@ -25,30 +25,31 @@
 '''
 'name': 'HTML (ng2)'
 'patterns': [
-  {
-    'begin': '(<)([a-zA-Z0-9:-]++)(?=[^>]*></\\2>)'
-    'beginCaptures':
-      '1':
-        'name': 'punctuation.definition.tag.html'
-      '2':
-        'name': 'entity.name.tag.html'
-    'end': '(>(\\s*<)/)(\\2)(>)'
-    'endCaptures':
-      '1':
-        'name': 'punctuation.definition.tag.html'
-      '2':
-        'name': 'meta.scope.between-tag-pair.html'
-      '3':
-        'name': 'entity.name.tag.html'
-      '4':
-        'name': 'punctuation.definition.tag.html'
-    'name': 'meta.tag.any.html'
-    'patterns': [
-      {
-        'include': '#tag-stuff'
-      }
-    ]
-  }
+  # removed to allow custom angular template tags
+  # {
+  #   'begin': '(<)([a-zA-Z0-9:-]++)(?=[^>]*></\\2>)'
+  #   'beginCaptures':
+  #     '1':
+  #       'name': 'punctuation.definition.tag.html'
+  #     '2':
+  #       'name': 'entity.name.tag.html'
+  #   'end': '(>(\\s*<)/)(\\2)(>)'
+  #   'endCaptures':
+  #     '1':
+  #       'name': 'punctuation.definition.tag.html'
+  #     '2':
+  #       'name': 'meta.scope.between-tag-pair.html'
+  #     '3':
+  #       'name': 'entity.name.tag.html'
+  #     '4':
+  #       'name': 'punctuation.definition.tag.html'
+  #   'name': 'meta.tag.any.html'
+  #   'patterns': [
+  #     {
+  #       'include': '#tag-stuff'
+  #     }
+  #   ]
+  # }
   {
     'begin': '(<\\?)(xml)'
     'captures':
@@ -325,17 +326,17 @@
     ]
   }
   {
-    'begin': '(</?)([a-zA-Z0-9:-]+)'
+    'begin': '(<\\/?[a-zA-Z0-9-]+)'
     'beginCaptures':
       '1':
-        'name': 'punctuation.definition.tag.begin.html'
+        'name': 'punctuation.definition.tag.begin.ng.html'
       '2':
-        'name': 'entity.name.tag.other.html'
+        'name': 'entity.name.tag.other.ng.html'
     'end': '(>)'
     'endCaptures':
       '1':
-        'name': 'punctuation.definition.tag.end.html'
-    'name': 'meta.tag.other.html'
+        'name': 'punctuation.definition.tag.end.ng.html'
+    'name': 'meta.tag.other.ng.html'
     'patterns': [
       {
         'include': '#tag-stuff'

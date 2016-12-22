@@ -349,6 +349,9 @@
     'match': '<>'
     'name': 'invalid.illegal.incomplete.html'
   }
+  {
+    'include': '#tag-ng-interpolation'
+  }
 ]
 'repository':
   'embedded-code':
@@ -427,6 +430,9 @@
       {
         'include': '#entities'
       }
+      {
+        'include': '#tag-ng-interpolation'
+      }
     ]
   'string-single-quoted':
     'begin': '\''
@@ -444,6 +450,9 @@
       }
       {
         'include': '#entities'
+      }
+      {
+        'include': '#tag-ng-interpolation'
       }
     ]
   'tag-generic-attribute':
@@ -531,6 +540,9 @@
           {
             'include': '#entities'
           }
+          {
+            'include': '#tag-ng-interpolation'
+          }
         ]
       }
       {
@@ -551,16 +563,26 @@
           {
             'include': '#entities'
           }
+          {
+            'include': '#tag-ng-interpolation'
+          }
         ]
       }
       {
         'include': '#unquoted-attribute'
       }
     ]
-
-
-
-
+  'tag-ng-interpolation':
+    'begin': '\\{\\{'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.interpolation.begin.ng.html'
+    'contentName': 'meta.definition.interpolation.ng.html'
+    'end': '\\}\\}'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.interpolation.end.ng.html'
+    'name': 'string.interpolation.html'
   'tag-stuff':
     'patterns': [
       {

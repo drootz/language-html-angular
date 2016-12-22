@@ -34,27 +34,43 @@ Here are the scopes used for styling Angular attributes in a syntax theme:
   .html {
 
     .entity.other.attribute-name.ng {
-      color: @blue !important;
+      color: @yellow !important;
     }
 
     .punctuation.separator.key-value.ng {
-      color: @blue !important;
+      color: @yellow !important;
     }
 
     .meta.attribute-with-value.ng {
-      color: @yellow !important;
+      color: @blue !important;
     }
 
     .punctuation.definition.string.begin.ng {
-      color: @yellow !important;
+      color: @blue !important;
     }
 
     .punctuation.definition.string.end.ng {
-      color: @yellow !important;
+      color: @blue !important;
     }
 
     .meta.toc-list.ng {
+      color: @blue !important;
+    }
+
+    .string.interpolation.html {
+      color: @blue !important;
+    }
+
+    .punctuation.definition.interpolation.begin.ng {
       color: @yellow !important;
+    }
+
+    .punctuation.definition.interpolation.end.ng {
+      color: @yellow !important;
+    }
+
+    .meta.definition.interpolation.ng {
+      color: @blue !important;
     }
 
   }

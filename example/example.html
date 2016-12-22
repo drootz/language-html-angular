@@ -14,12 +14,12 @@
       *ngIf="signUpForm.controls['username'].hasError('required') && signUpForm.controls['username'].touched">
       <span>The {{interpolation}} is required.</span>
     </div>
-
+    
     <div class="form-control-feedback alert-details"
     *ngIf="signUpForm.controls['username'].hasError('invalidUsername') && signUpForm.controls['username'].touched">
-      <p class="no-margin"><small>Invalid {{interpolation}} format:</small></p>
+      <p class="no-margin"><small {{done}}>Invalid {{interpolation}} format:</small></p>
       <ul class="list-block">
-        <li bind-target="expression"><small>list item</small></li>
+        <li bind-target="expression"><small>list && item</small></li>
         <li [target]="expression"><small>list item</small></li>
         <li on-target="expression"><small>list item</small></li>
         <li (target)="expression"><small>list item</small></li>

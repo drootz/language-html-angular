@@ -583,6 +583,11 @@
       '0':
         'name': 'punctuation.definition.interpolation.end.ng.html'
     'name': 'string.interpolation.ng.html'
+    'patterns': [
+      {
+        'include': '#tag-ng-pipe'
+      }
+    ]
   'tag-stuff':
     'patterns': [
       {
@@ -610,3 +615,6 @@
   'unquoted-attribute':
     'match': '(?<==)(?:[^\\s<>/\'"]|/(?!>))+'
     'name': 'string.unquoted.html'
+  'tag-ng-pipe':
+    'match': '\\|'
+    'name': 'string.interpolation.pipe.ng.html'

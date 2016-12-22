@@ -1,4 +1,6 @@
 
+
+
   <div class="form-group"
   [ngClass]="{
     'has-success':!signUpForm.controls['username'].hasError('required') && !signUpForm.controls['username'].hasError('invalidUsername') && signUpForm.controls['username'].touched,
@@ -14,7 +16,7 @@
       *ngIf="signUpForm.controls['username'].hasError('required') && signUpForm.controls['username'].touched">
       <span>The {{interpolation}} is required.</span>
     </div>
-    
+
     <div class="form-control-feedback alert-details"
     *ngIf="signUpForm.controls['username'].hasError('invalidUsername') && signUpForm.controls['username'].touched">
       <p class="no-margin"><small {{done}}>Invalid {{interpolation}} format:</small></p>

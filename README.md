@@ -27,7 +27,17 @@ Ensure to use a theme packages supporting Angular 2 syntax highlighting for this
 
 ### Styling Scopes
 
-Here are the scopes used for styling Angular attributes in a syntax theme:
+#### Angular 2 attributes and tags scoped:
+- `{{interpolation}}`
+- `[target] = "expression"`
+- `bind-target = "expression"`
+- `(target) = "statement"`
+- `on-target = "statement"`
+- `[(target)] = "expression"`
+- `bindon-target = "expression"`
+- `*ngIf`, `*ngFor`, etc.
+
+Here are the scopes used for styling the above attributes in a syntax theme:
 
 ````less
 

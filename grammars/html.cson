@@ -597,6 +597,9 @@
         'include': '#tag-ng-attribute'
       }
       {
+        'include': '#tag-ng-ngfor-attribute'
+      }
+      {
         'include': '#tag-generic-attribute'
       }
       {
@@ -618,3 +621,6 @@
   'tag-ng-pipe':
     'match': '\\|'
     'name': 'string.interpolation.pipe.ng.html'
+  'tag-ng-ngfor-attribute':
+    'match': '(\\s+\\b(ngFor)\\b\\s+)|(\\b(let-[a-zA-Z0-9\\-]+)\\b)'
+    'name': 'meta.ngfor-attribute.ng.html'

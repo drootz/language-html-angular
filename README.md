@@ -86,39 +86,39 @@ Here are the scopes used for styling the above attributes in a syntax theme:
     }
 
     .string.interpolation.pipe.ng {
-      color: @222222 !important;
+      color: @orange !important;
     }
 
     .meta.ngfor-attribute.ng {
-      color: @666666 !important;
+      color: @yellow !important;
     }
 
     .punctuation.definition.tag.ng {
-      color: darken(@111111,15%) !important;
+      color: darken(@green,15%) !important;
     }
 
     .punctuation.definition.tag.begin.ng {
-      color: darken(@111111,15%) !important;
+      color: darken(@green,15%) !important;
     }
 
     .punctuation.definition.tag.end.ng {
-      color: darken(@111111,15%) !important;
+      color: darken(@green,15%) !important;
     }
 
     .entity.name.tag.ng {
-      color: darken(@111111,15%) !important;
+      color: darken(@green,15%) !important;
     }
 
     .entity.name.tag.other.ng {
-      color: darken(@111111,15%) !important;
+      color: darken(@green,15%) !important;
     }
 
     .meta.tag.any.ng {
-      color: darken(@111111,15%) !important;
+      color: darken(@green,15%) !important;
     }
 
     .meta.tag.other.ng {
-      color: darken(@111111,15%) !important;
+      color: darken(@green,15%) !important;
     }
 
   }

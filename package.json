@@ -1,6 +1,6 @@
 {
   "name": "language-html-angular",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "HTML language support for Angular 2 in Atom",
   "engines": {
     "atom": "*",

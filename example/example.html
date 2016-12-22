@@ -1,33 +1,33 @@
 
 
-
-  <div class="form-group"
-  [ngClass]="{
-    'has-success':!signUpForm.controls['username'].hasError('required') && !signUpForm.controls['username'].hasError('invalidUsername') && signUpForm.controls['username'].touched,
-    'has-danger':signUpForm.controls['username'].hasError('required') && signUpForm.controls['username'].touched,
-    'has-warning':signUpForm.controls['username'].hasError('invalidUsername') && signUpForm.controls['username'].touched}">
-
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon"><img src="{{interpolation}}" style="height:20px"></span>
-      <input type="text" class="form-control" placeholder="Username" [formControl]="signUpForm.controls['username']">
-    </div>
-
-    <div class="form-control-feedback"
-      *ngIf="signUpForm.controls['username'].hasError('required') && signUpForm.controls['username'].touched">
-      <span>The {{interpolation}} is required.</span>
-    </div>
-
-    <div class="form-control-feedback alert-details"
-    *ngIf="signUpForm.controls['username'].hasError('invalidUsername') && signUpForm.controls['username'].touched">
-      <p class="no-margin"><small {{done}}>Invalid {{interpolation}} format:</small></p>
-      <ul class="list-block">
-        <li bind-target="expression"><small>list && item</small></li>
-        <li [target]="expression"><small>list item</small></li>
-        <li on-target="expression"><small>list item</small></li>
-        <li (target)="expression"><small>list item</small></li>
-        <li bindon-target="expression"><small>list item</small></li>
-        <li [(target)]="expression"><small>list item</small></li>
-      </ul>
-    </div>
-
+  <div class="syntax-scopes-details">
+    <p>Data Binding Built-in Directives and Pipe Operator syntax:</p>
+    <ul class="list-block">
+      <li class="one-way" title="Hello {{interpolation}}">Binding from data source to view target</li>
+      <li class="one-way"><img src="{{interpolation}}">Binding from data source to view target</li>
+      <li class="one-way">Binding from data source to view target: {{interpolation}}</li>
+      <li class="one-way" bind-target="expression">Binding from data source to view target</li>
+      <li class="one-way" [target]="expression">Binding from data source to view target</li>
+      <li class="one-way" on-target="expression">Binding from view target to data source</li>
+      <li class="one-way" (target)="expression">Binding from view target to data source</li>
+      <li class="two-way" bindon-target="expression">Two-way binding</li>
+      <li class="two-way" [(bananabox)]="expression">Two-way binding</li>
+      <li class="directive" [built-in.directive]="expression"></li>
+      <li class="directive" (on.directive)="expression"></li>
+      <li class="directive" *ngIf="expression">Built-in directive</li>
+      <li class="directive" *ngFor="expression">Built-in directive</li>
+      <li class="directive" ngFor let-target [ngForOf]="targets" [ngForTrackBy]="trackByTargets"></li>
+      <li class="directive" *ngSwitchCase="expression">Built-in directive</li>
+      <li class="directive" *NgSwitchDefault = "expression">Built-in directive</li>
+      <li class="pipe-operator">Pipe Operator: {{ target | operator | chain }}</li>
+    </ul>
   </div>
+
+  <!-- Examples of template tag -->
+  <template-tag></template-tag>
+
+  <custom-tag template="ngFor let hero of heroes; trackBy:trackByHeroes" [hero]="hero"></custom-tag>
+
+  <custom-tag ngFor let-target [ngForOf]="targets" [ngForTrackBy]="trackByTargets">
+    <custom-child [target]="target"></custom-child>
+  </custom-tag>

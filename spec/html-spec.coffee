@@ -6,41 +6,41 @@ describe 'HTML grammar', ->
 
   beforeEach ->
     waitsForPromise ->
-      atom.packages.activatePackage('language-html')
+      atom.packages.activatePackage('language-html-angular')
 
     waitsForPromise ->
       atom.packages.activatePackage('language-coffee-script')
 
     runs ->
-      grammar = atom.grammars.grammarForScopeName('text.html.basic')
+      grammar = atom.grammars.grammarForScopeName('text.html.ng')
 
   it 'parses the grammar', ->
     expect(grammar).toBeTruthy()
-    expect(grammar.scopeName).toBe 'text.html.basic'
+    expect(grammar.scopeName).toBe 'text.html.ng'
 
   describe 'meta.scope.outside-tag scope', ->
     it 'tokenizes an empty file', ->
       lines = grammar.tokenizeLines ''
-      expect(lines[0][0]).toEqual value: '', scopes: ['text.html.basic']
+      expect(lines[0][0]).toEqual value: '', scopes: ['text.html.ng']
 
     it 'tokenizes a single < as without freezing', ->
       lines = grammar.tokenizeLines '<'
-      expect(lines[0][0]).toEqual value: '<', scopes: ['text.html.basic']
+      expect(lines[0][0]).toEqual value: '<', scopes: ['text.html.ng']
 
       lines = grammar.tokenizeLines ' <'
-      expect(lines[0][0]).toEqual value: ' <', scopes: ['text.html.basic']
+      expect(lines[0][0]).toEqual value: ' <', scopes: ['text.html.ng']
 
     it 'tokenizes <? without locking up', ->
       lines = grammar.tokenizeLines '<?'
-      expect(lines[0][0]).toEqual value: '<?', scopes: ['text.html.basic']
+      expect(lines[0][0]).toEqual value: '<?', scopes: ['text.html.ng']
 
     it 'tokenizes >< as html without locking up', ->
       lines = grammar.tokenizeLines '><'
-      expect(lines[0][0]).toEqual value: '><', scopes: ['text.html.basic']
+      expect(lines[0][0]).toEqual value: '><', scopes: ['text.html.ng']
 
     it 'tokenizes < after tags without locking up', ->
       lines = grammar.tokenizeLines '<span><'
-      expect(lines[0][3]).toEqual value: '<', scopes: ['text.html.basic']
+      expect(lines[0][3]).toEqual value: '<', scopes: ['text.html.ng']
 
   describe 'template script tags', ->
     it 'tokenizes the content inside the tag as HTML', ->
@@ -50,9 +50,9 @@ describe 'HTML grammar', ->
         </script>
       '''
 
-      expect(lines[0][0]).toEqual value: '<', scopes: ['text.html.basic', 'punctuation.definition.tag.html']
-      expect(lines[1][0]).toEqual value: '  ', scopes: ['text.html.basic', 'text.embedded.html']
-      expect(lines[1][1]).toEqual value: '<', scopes: ['text.html.basic', 'text.embedded.html', 'meta.tag.block.any.html', 'punctuation.definition.tag.begin.html']
+      expect(lines[0][0]).toEqual value: '<', scopes: ['text.html.ng', 'punctuation.definition.tag.html']
+      expect(lines[1][0]).toEqual value: '  ', scopes: ['text.html.ng', 'text.embedded.html']
+      expect(lines[1][1]).toEqual value: '<', scopes: ['text.html.ng', 'text.embedded.html', 'meta.tag.block.any.html', 'punctuation.definition.tag.begin.html']
 
   describe 'CoffeeScript script tags', ->
     it 'tokenizes the content inside the tag as CoffeeScript', ->
@@ -62,9 +62,9 @@ describe 'HTML grammar', ->
         </script>
       '''
 
-      expect(lines[0][0]).toEqual value: '<', scopes: ['text.html.basic', 'punctuation.definition.tag.html']
-      expect(lines[1][0]).toEqual value: '  ', scopes: ['text.html.basic', 'source.coffee.embedded.html']
-      expect(lines[1][1]).toEqual value: '->', scopes: ['text.html.basic', 'source.coffee.embedded.html', 'storage.type.function.coffee']
+      expect(lines[0][0]).toEqual value: '<', scopes: ['text.html.ng', 'punctuation.definition.tag.html']
+      expect(lines[1][0]).toEqual value: '  ', scopes: ['text.html.ng', 'source.coffee.embedded.html']
+      expect(lines[1][1]).toEqual value: '->', scopes: ['text.html.ng', 'source.coffee.embedded.html', 'storage.type.function.coffee']
 
   describe 'JavaScript script tags', ->
     beforeEach ->
@@ -77,26 +77,26 @@ describe 'HTML grammar', ->
         </script>
       '''
 
-      expect(lines[0][0]).toEqual value: '<', scopes: ['text.html.basic', 'punctuation.definition.tag.html']
+      expect(lines[0][0]).toEqual value: '<', scopes: ['text.html.ng', 'punctuation.definition.tag.html']
 
-      expect(lines[1][0]).toEqual value: '  ', scopes: ['text.html.basic', 'source.js.embedded.html']
-      expect(lines[1][1]).toEqual value: 'var', scopes: ['text.html.basic', 'source.js.embedded.html', 'storage.type.var.js']
+      expect(lines[1][0]).toEqual value: '  ', scopes: ['text.html.ng', 'source.js.embedded.html']
+      expect(lines[1][1]).toEqual value: 'var', scopes: ['text.html.ng', 'source.js.embedded.html', 'storage.type.var.js']
 
   describe "comments", ->
     it "tokenizes -- as an error", ->
       {tokens} = grammar.tokenizeLine '<!-- some comment --->'
 
-      expect(tokens[0]).toEqual value: '<!--', scopes: ['text.html.basic', 'comment.block.html', 'punctuation.definition.comment.html']
-      expect(tokens[1]).toEqual value: ' some comment -', scopes: ['text.html.basic', 'comment.block.html']
-      expect(tokens[2]).toEqual value: '-->', scopes: ['text.html.basic', 'comment.block.html', 'punctuation.definition.comment.html']
+      expect(tokens[0]).toEqual value: '<!--', scopes: ['text.html.ng', 'comment.block.html', 'punctuation.definition.comment.html']
+      expect(tokens[1]).toEqual value: ' some comment -', scopes: ['text.html.ng', 'comment.block.html']
+      expect(tokens[2]).toEqual value: '-->', scopes: ['text.html.ng', 'comment.block.html', 'punctuation.definition.comment.html']
 
       {tokens} = grammar.tokenizeLine '<!-- -- -->'
 
-      expect(tokens[0]).toEqual value: '<!--', scopes: ['text.html.basic', 'comment.block.html', 'punctuation.definition.comment.html']
-      expect(tokens[1]).toEqual value: ' ', scopes: ['text.html.basic', 'comment.block.html']
-      expect(tokens[2]).toEqual value: '--', scopes: ['text.html.basic', 'comment.block.html', 'invalid.illegal.bad-comments-or-CDATA.html']
-      expect(tokens[3]).toEqual value: ' ', scopes: ['text.html.basic', 'comment.block.html']
-      expect(tokens[4]).toEqual value: '-->', scopes: ['text.html.basic', 'comment.block.html', 'punctuation.definition.comment.html']
+      expect(tokens[0]).toEqual value: '<!--', scopes: ['text.html.ng', 'comment.block.html', 'punctuation.definition.comment.html']
+      expect(tokens[1]).toEqual value: ' ', scopes: ['text.html.ng', 'comment.block.html']
+      expect(tokens[2]).toEqual value: '--', scopes: ['text.html.ng', 'comment.block.html', 'invalid.illegal.bad-comments-or-CDATA.html']
+      expect(tokens[3]).toEqual value: ' ', scopes: ['text.html.ng', 'comment.block.html']
+      expect(tokens[4]).toEqual value: '-->', scopes: ['text.html.ng', 'comment.block.html', 'punctuation.definition.comment.html']
 
   grammarTest path.join(__dirname, 'fixtures/syntax_test_html.html')
   grammarTest path.join(__dirname, 'fixtures/syntax_test_html_template_fragments.html')
@@ -105,10 +105,10 @@ describe 'HTML grammar', ->
     it "tokenizes & and characters after it", ->
       {tokens} = grammar.tokenizeLine '& &amp; &a'
 
-      expect(tokens[0]).toEqual value: '&', scopes: ['text.html.basic', 'invalid.illegal.bad-ampersand.html']
-      expect(tokens[3]).toEqual value: 'amp', scopes: ['text.html.basic', 'constant.character.entity.html', 'entity.name.entity.other.html']
-      expect(tokens[4]).toEqual value: ';', scopes: ['text.html.basic', 'constant.character.entity.html', 'punctuation.definition.entity.end.html']
-      expect(tokens[7]).toEqual value: 'a', scopes: ['text.html.basic']
+      expect(tokens[0]).toEqual value: '&', scopes: ['text.html.ng', 'invalid.illegal.bad-ampersand.html']
+      expect(tokens[3]).toEqual value: 'amp', scopes: ['text.html.ng', 'constant.character.entity.html', 'entity.name.entity.other.html']
+      expect(tokens[4]).toEqual value: ';', scopes: ['text.html.ng', 'constant.character.entity.html', 'punctuation.definition.entity.end.html']
+      expect(tokens[7]).toEqual value: 'a', scopes: ['text.html.ng']
 
   describe "firstLineMatch", ->
     it "recognises HTML5 doctypes", ->

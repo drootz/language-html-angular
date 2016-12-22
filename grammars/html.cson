@@ -1,4 +1,4 @@
-'scopeName': 'text.html.basic'
+'scopeName': 'text.html.ng'
 'fileTypes': [
   'ejs'
   'htm'
@@ -181,7 +181,7 @@
         'end': '(</)((?i:script))'
         'patterns': [
           {
-            'include': 'text.html.basic'
+            'include': 'text.html.ng'
           }
         ]
       }

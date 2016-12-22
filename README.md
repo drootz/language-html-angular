@@ -36,6 +36,8 @@ Ensure to use a theme packages supporting Angular 2 syntax highlighting for this
 - `[(target)] = "expression"`
 - `bindon-target = "expression"`
 - `*ngIf`, `*ngFor`, etc.
+- Pipe Operator: `{{target | operator | chain}}`
+- Template Tags: `<custom-tag></custom-tag>`
 
 Here are the scopes used for styling the above attributes in a syntax theme:
 
@@ -114,7 +116,7 @@ Here are the scopes used for styling the above attributes in a syntax theme:
     .meta.tag.any.ng {
       color: darken(@111111,15%) !important;
     }
-    
+
     .meta.tag.other.ng {
       color: darken(@111111,15%) !important;
     }

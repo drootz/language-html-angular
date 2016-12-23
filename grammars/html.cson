@@ -586,7 +586,10 @@
     'name': 'string.interpolation.ng.html'
     'patterns': [
       {
-        'include': '#tag-ng-pipe'
+        'include': '#tag-ng-interpolation-pipe'
+      }
+      {
+        'include': '#tag-ng-js-stuff'
       }
     ]
   'tag-stuff':
@@ -619,9 +622,75 @@
   'unquoted-attribute':
     'match': '(?<==)(?:[^\\s<>/\'"]|/(?!>))+'
     'name': 'string.unquoted.html'
-  'tag-ng-pipe':
-    'match': '\\|'
-    'name': 'string.interpolation.pipe.ng.html'
   'tag-ng-ngfor-attribute':
     'match': '(\\s+\\b(ngFor)\\b\\s+)|(\\b(let-[a-zA-Z0-9\\-]+)\\b)'
     'name': 'meta.ngfor-attribute.ng.html'
+  'tag-ng-interpolation-pipe':
+    'match': '\\|'
+    'name': 'string.interpolation.pipe.ng.html'
+  'tag-ng-js-bool':
+    'match': 'true|false|null'
+    'name': 'string.js.bool.ng.html'
+  'tag-ng-js-function':
+    'begin': '\\w+\\('
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.function.begin.ng.html'
+    'contentName': 'meta.definition.function.ng.html'
+    'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.function.end.ng.html'
+    'name': 'string.function.ng.html'
+    'patterns': [
+      {
+        'include': '#tag-ng-js-stuff'
+      }
+    ]
+  'tag-ng-js-operator':
+    'match': '(\\*|\\+|\\-|=|&&|\\|\\||:|\\?){1}'
+    'name': 'string.operator.ng.html'
+  'tag-ng-js-brackets':
+    'match': '(\\{|\\}|\\[|\\]|\\(|\\)|;){1}'
+    'name': 'string.bracket.ng.html'
+  'tag-ng-js-string-double-quoted':
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.js.string.begin.ng.html'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.js.string.end.ng.html'
+    'name': 'string.js.quoted.double.ng.html'
+  'tag-ng-string-single-quoted':
+    'begin': '\''
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.js.string.begin.ng.html'
+    'end': '\''
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.js.string.end.ng.html'
+    'name': 'string.js.quoted.single.ng.html'
+  'tag-ng-js-stuff':
+    'patterns': [
+      {
+        'include': '#tag-ng-js-operator'
+      }
+      {
+        'include': '#tag-ng-js-brackets'
+      }
+      {
+        'include': '#tag-ng-js-string-double-quoted'
+      }
+      {
+        'include': '#tag-ng-string-single-quoted'
+      }
+      {
+        'include': '#tag-ng-js-function'
+      }
+      {
+        'include': '#tag-ng-js-bool'
+      }
+    ]

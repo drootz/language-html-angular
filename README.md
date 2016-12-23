@@ -38,6 +38,7 @@ Ensure to use a theme packages supporting Angular 2 syntax highlighting for this
 - `*ngIf`, `*ngFor`, etc.
 - Pipe Operator: `{{target | operator | chain}}`
 - Template Tags: `<custom-tag></custom-tag>`
+- Interpolation syntax highlighting
 
 Here are the scopes used for styling the above attributes in a syntax theme:
 
@@ -119,6 +120,39 @@ Here are the scopes used for styling the above attributes in a syntax theme:
 
     .meta.tag.other.ng {
       color: darken(@green,15%) !important;
+    }
+
+    // Interpolation Syntax
+    .punctuation.definition.js.string.begin.ng.html {
+      color: @444444 !important;
+    }
+
+    .punctuation.definition.js.string.end.ng.html {
+      color: @444444 !important;
+    }
+
+    .string.operator.ng {
+      color: @syntax-text-color !important;
+    }
+
+    .string.bracket.ng {
+      color: @syntax-text-color !important;
+    }
+
+    .string.js.bool.ng {
+      color: @222222 !important;
+    }
+
+    .punctuation.definition.function.begin.ng {
+      color: @666666 !important;
+    }
+
+    .punctuation.definition.function.end.ng {
+      color: @666666 !important;
+    }
+
+    .meta.definition.function.ng {
+      color: @333333 !important;
     }
 
   }

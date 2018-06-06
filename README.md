@@ -22,6 +22,7 @@ Ensure to use a theme packages supporting Angular 2 syntax highlighting for this
 - [syntax-theme-boilerplate-syntax](https://atom.io/themes/syntax-theme-boilerplate-syntax)
 - [tomorrow-night-eigthies-ng2-syntax](https://atom.io/themes/tomorrow-night-eighties-ng2-syntax)
 - [yesterday-night-eighties-ng2-syntax](https://atom.io/themes/yesterday-night-eighties-ng2-syntax)
+- [one-dark-syntax](https://github.com/atom/one-dark-syntax)
 
 ![](https://raw.githubusercontent.com/drootz/language-html-angular/master/img/preview-dark.png)
 
